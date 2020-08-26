@@ -1,0 +1,2 @@
+# Landu
+platform for minning
