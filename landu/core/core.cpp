@@ -7,6 +7,30 @@
 
 using namespace std;
 
+//commandline console to mine currency
+void command_line_console(){
+//variables for command line 
+
+bool yes;
+bool status_for_user;	
+string command;
+
+cout<<"command_line_landu$:";
+cin>>command;
+if(command=="--version"){
+	//open file and show version
+    cout<<"version:0.0.1"<<endl;
+    command_line_console();
+
+}
+if(command==""){
+	//open file and show version
+    cout<<"version:0.0.1"<<endl;
+    command_line_console();
+}
+
+
+}
 
 
 //launch main functions 
@@ -14,12 +38,6 @@ int  main() {
 
 
 //first launch functions
-
-
-//variables for command line 
-string command;
-bool yes;
-
 
 
 //start command landu
@@ -35,14 +53,9 @@ cout<<"**************"<<endl;
 //logo end 
 
 
+command_line_console();
 
 
-cout<<"command_line_landu$:";
-cin>>command;
-if(command=="--version"){
-	//open file and show version
-    cout<<"version:0.0.1"<<endl;
-}
 
 coin star;
 star.start();
