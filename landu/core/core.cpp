@@ -3,7 +3,9 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <ctime>
 #include "coin.cpp"
+     /* time */
 
 using namespace std;
 
@@ -36,6 +38,20 @@ user_password = password_user_data;
 
 }
 
+//create coin 
+void create_coin() {
+
+ ofstream outfile("coin.text");
+ int  iSecret = rand() % 23423 + 1;
+ int  iSecret1 = rand() % 33221 + 1;
+ int  iSecret2 = rand() % 1124 + 1;
+ int  iSecret3 = rand() % 10123 + 1;
+ outfile<<iSecret;
+ outfile<<iSecret1;
+ outfile<<iSecret2;
+ outfile<<iSecret3;
+
+}
 
 //commandline console to mine currency
 void command_line_console(){
@@ -60,6 +76,10 @@ if(command=="--version_landu"){
 }
 if(command=="log_in"){
 	create_txt_file_user_data(); // create user data;
+	command_line_console();
+}
+if(command=="create_coin"){
+	create_coin();               // create coin
 	command_line_console();
 }
 
