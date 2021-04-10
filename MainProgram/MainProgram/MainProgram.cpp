@@ -31,6 +31,23 @@ string array_text[200] = {}; // array for code of coin
 int array_text_for_id[200] = {};
 string crypto_log_key[200] = {}; // crypto key for coin
 
+void make_token(string file_name_for_token) {
+    string file_name_t=file_name_for_token;
+    //create file "add mode ", generate token , check uniqueness of token 
+    ofstream myfile;
+    myfile.open("example.txt", ios::app);
+    if (myfile.is_open())
+    {
+        myfile << "This is a line.\n";
+        myfile << "This is another line.\n";
+        myfile << rand() % 123 + 1299999; 
+        myfile.close();
+        cout << "token has created";
+    }
+    else cout << "Unable to open file";
+}
+
+
 void make_coin(string file_name) {
 
     
@@ -56,16 +73,18 @@ void make_coin(string file_name) {
 }
 
 int Programm() {
-    string command_in_bash;
     
+    string command_in_bash;
+    string strings;
+    char command_in_bash_array[100] = {};
     //get descriptor 
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    /*symbol color - Green. Цвет фона - желтый*/
+    /*symbol color - Green.*/
     SetConsoleTextAttribute(hConsole, (WORD)((Black << 4) | Green));
     cout<<"Landu Bash 2021 @BlessedSoft"<<endl;
     cout << "(landu-bash):";
-    cin >> command_in_bash;
-    if (command_in_bash == "make") {
+    cin >> strings;
+    if (strings == "make" || strings[4]=='d') {
         make_coin("coin.txt");
     }
     return 0;
